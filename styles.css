@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/home/sidhan/Desktop/Infinestsa/Images/Main BG.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Skranji', Times, serif, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;  /* Keeps title and subtitle in vertical flow */
+    align-items:center; /* Aligns items to the left */
+    justify-content: center;
+    height: 110vh;
+    position:fixed;
+}
+
+
+#title {
+    font-family: 'Skranji', 'Lato';
+    font-size: 6rem;
+    color: #ba52eb;
+    text-shadow: 3px 4px 5px hsla(160, 98%, 48%, 0.808);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    opacity: 1; /* Use a number between 0 and 1 for opacity */
+}
+#subtitle {
+    font-family: 'Moirai One', 'Lato';
+    font-size: 2rem;
+    color: hsl(180, 97%, 45%);
+    margin-top: 10px;
+    text-shadow: 2px 3px 4px #b808eef5;
+    text-align: right;
+    align-self: flex-end; /* Moves subtitle to the right side */
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    animation-delay: 1.5s;
+}
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(0.2);
+    animation: flyIn 0.7s ease-out forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(120px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+}
+@keyframes flyIn {
+    0% {
+        opacity: 0;
+        transform: translate(var(--start-x, 0px), var(--start-y, 0px)) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+.button-container {
+    text-align: center; /* Center the button */
+    margin-top: auto; /* Push the button to the bottom if using flexbox */
+}
+
+.start-button {
+    display: inline-block;
+    margin-bottom: 100px;
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: #ba52eb;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+
